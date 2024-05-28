@@ -16,7 +16,7 @@ if arg_count == 2:
             print("I'm Even.")
         else:
             print("I'm Odd.")
-    except ValueError:
+    except ValueError:  # If i cant typecast my arg, i catch error here.
         print("AssertionError: Argument is not an integer")
 
 # Check for more than 2 argh
@@ -26,3 +26,5 @@ elif arg_count > 2:
 # If we do not have argh
 else:
     pass
+
+# https://www.geeksforgeeks.org/python-assertion-error/

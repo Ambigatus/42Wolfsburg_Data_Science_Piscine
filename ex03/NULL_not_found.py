@@ -1,17 +1,20 @@
 def NULL_not_found(obj: any) -> int:
+    obj_type = obj.__class__.__name__  # Получаем имя класса объекта напрямую
+    error_flag = 0
 
-    if obj is None:
-        print("Nothing:", obj, type(obj))
-    elif isinstance(obj, float) and obj != obj:
-        print("Cheese:", obj, type(obj))
-    elif obj == 0 and not isinstance(obj, bool):  # isinstance checks this variable is not bool type
-        print("Zero:", obj, type(obj))
-    elif obj == '':
-        print("Empty:", type(obj))
-    elif obj is False:  # because of that
-        print("Fake:", obj, type(obj))
+    if obj_type == "NoneType":
+        print("Nothing:", obj, "<class 'NoneType'>")
+    elif obj_type == "float" and str(obj) == "nan":
+        print("Cheese:", obj, "<class 'float'>")
+    elif obj_type == "int" and obj == 0:
+        print("Zero:", obj, "<class 'int'>")
+    elif obj_type == "str" and obj == '':
+        print("Empty:", "<class 'str'>")
+    elif obj_type == "bool" and obj is False:
+        print("Fake:", obj, "<class 'bool'>")
     else:
         print("Type not Found")
-        return 1
+        error_flag = 1  # Устанавливаем флаг ошибки в 1, если тип не найден
 
-    return 0
+    return error_flag  # Возвращаем флаг ошибки
+
