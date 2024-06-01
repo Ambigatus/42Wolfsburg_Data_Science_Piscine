@@ -1,6 +1,0 @@
-# This is the build system configuration for our Python project
-[build-system]
-# The `requires` section lists the dependencies needed to build the project
-requires = ["setuptools>=42", "wheel"]
-# The `build-backend` section specifies the build system to use
-build-backend = "setuptools.build_meta"
