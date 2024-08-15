@@ -36,9 +36,7 @@ def ft_zoom(image_array: np.ndarray, zoom_factor: float):
 
         return zoomed_image
     except Exception as e:
-        print(f"An error occurred: {e}")
-
-
+        print(f"An error occurred: {e}"
 def display_image_with_scale(image_array: np.ndarray, title: str):
     """
     Display the image with the scale.
